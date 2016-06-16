@@ -105,15 +105,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // holigo_homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'holigo_homepage');
-            }
-
-            return array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'holigo_homepage',);
-        }
-
         // get_users
         if (0 === strpos($pathinfo, '/users') && preg_match('#^/users\\.(?P<_format>[^/]++)$#s', $pathinfo, $matches)) {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
@@ -121,7 +112,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 goto not_get_users;
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_users')), array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::getUsersAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_users')), array (  '_controller' => 'UserBundle\\Controller\\DefaultController::getUsersAction',));
         }
         not_get_users:
 
@@ -132,7 +123,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 goto not_get_user;
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_user')), array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::getUserAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_user')), array (  '_controller' => 'UserBundle\\Controller\\DefaultController::getUserAction',));
         }
         not_get_user:
 
@@ -143,7 +134,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 goto not_user_new;
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_new')), array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::createUserAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_new')), array (  '_controller' => 'UserBundle\\Controller\\DefaultController::createUserAction',));
         }
         not_user_new:
 
@@ -154,7 +145,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 goto not_user_edit;
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_edit')), array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::editUserAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_edit')), array (  '_controller' => 'UserBundle\\Controller\\DefaultController::editUserAction',));
         }
         not_user_edit:
 
@@ -165,9 +156,18 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 goto not_user_delete;
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_delete')), array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::deleteUserAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_delete')), array (  '_controller' => 'UserBundle\\Controller\\DefaultController::deleteUserAction',));
         }
         not_user_delete:
+
+        // holigo_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'holigo_homepage');
+            }
+
+            return array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'holigo_homepage',);
+        }
 
         // homepage
         if (rtrim($pathinfo, '/') === '') {

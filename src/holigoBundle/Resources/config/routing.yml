@@ -1,28 +1,3 @@
 holigo_homepage:
     path:     /
     defaults: { _controller: holigoBundle:Default:index }
-
-get_users:
-    path:     /users.{_format}
-    defaults: { _controller: "holigoBundle:Default:getUsers" }
-    methods:  GET
-
-get_user:
-    path:     /{id}.{_format}
-    defaults: { _controller: "holigoBundle:Default:getUser" }
-    methods:  GET
-
-user_new:
-    path:     /new.{_format}
-    defaults: { _controller: "holigoBundle:Default:createUser" }
-    methods:  POST
-
-user_edit:
-    path:     /edit/{id}.{_format}
-    defaults: { _controller: "holigoBundle:Default:editUser" }
-    methods:  PUT
-
-user_delete:
-    path:     /delete/{id}.{_format}
-    defaults: { _controller: "holigoBundle:Default:deleteUser" }
-    methods:  DELETE
