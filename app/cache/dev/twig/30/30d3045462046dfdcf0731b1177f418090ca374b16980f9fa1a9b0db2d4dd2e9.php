@@ -15,14 +15,93 @@ class __TwigTemplate_1b9e734e09f2a48a9ad1db273bd6ed51f76f7a06aceef3abc5ea3e3bd32
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3bc829844abaf31e28fb92a185c708b8051da0cb67d60b2c017194238743669a = $this->env->getExtension("native_profiler");
-        $__internal_3bc829844abaf31e28fb92a185c708b8051da0cb67d60b2c017194238743669a->enter($__internal_3bc829844abaf31e28fb92a185c708b8051da0cb67d60b2c017194238743669a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "holigoBundle:Default:index.html.twig"));
+        $__internal_5ab46390321532f267d1683214aa05f8ec909248c94bef6fbf9f36b52a9e1c74 = $this->env->getExtension("native_profiler");
+        $__internal_5ab46390321532f267d1683214aa05f8ec909248c94bef6fbf9f36b52a9e1c74->enter($__internal_5ab46390321532f267d1683214aa05f8ec909248c94bef6fbf9f36b52a9e1c74_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "holigoBundle:Default:index.html.twig"));
 
         // line 1
-        echo "<!-- Colle ton code ici -->
+        echo "<!DOCTYPE html>
+<html ng-app=\"app\">
+  <head>
+    <meta charset=\"utf-8\">
+    <title>HOLIGO</title>
+    <!-- CSS -->
+    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/style.css"), "html", null, true);
+        echo "\">
+    <!-- icone -->
+    <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <!-- JS -->
+    <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-2.1.1.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js\"></script>
+    <!-- AUTOCOMPLETE API GOOGLE -->
+    <script type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDuG0OeQkBpLTk_ufVZVAQWxTicjPTP2Ok&libraries=places&components=country:fr\"></script>
+    <script src=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/libs/ngAutocomplete.js"), "html", null, true);
+        echo "\"></script>
+    <!-- Angular JS -->
+    <script src=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/libs/angular.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 21
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/libs/angular-route.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 22
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/libs/ngAutocomplete.js"), "html", null, true);
+        echo "\"></script>
+    <!-- Controllers -->
+    <script src=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/controllers/mainController.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/controllers/registerController.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/controllers/holidayController.js"), "html", null, true);
+        echo "\"></script>
+    <!-- Services -->
+    <script src=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/services/registerService.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/app.js"), "html", null, true);
+        echo "\"></script>
+  </head>
+  <body>
+    <nav>
+      <div class=\"nav-wrapper\">
+        <a href=\"#!\" class=\"brand-logo\">Holigo</a>
+        <ul class=\"right hide-on-med-and-down\">
+          <li>
+            <!-- Modal Trigger -->
+            <a class=\"waves-effect waves-light modal-trigger btn\" href=\"#modal1\">Login</a>
+          </li>
+          <li>
+            <a class=\"waves-effect waves-light btn\">Je m'inscris</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class=\"container-fluid\">
+      <ng-view></ng-view>
+    </div>
+  </body>
+</html>
 ";
         
-        $__internal_3bc829844abaf31e28fb92a185c708b8051da0cb67d60b2c017194238743669a->leave($__internal_3bc829844abaf31e28fb92a185c708b8051da0cb67d60b2c017194238743669a_prof);
+        $__internal_5ab46390321532f267d1683214aa05f8ec909248c94bef6fbf9f36b52a9e1c74->leave($__internal_5ab46390321532f267d1683214aa05f8ec909248c94bef6fbf9f36b52a9e1c74_prof);
 
     }
 
@@ -31,10 +110,64 @@ class __TwigTemplate_1b9e734e09f2a48a9ad1db273bd6ed51f76f7a06aceef3abc5ea3e3bd32
         return "holigoBundle:Default:index.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  22 => 1,);
+        return array (  79 => 29,  75 => 28,  70 => 26,  66 => 25,  62 => 24,  57 => 22,  53 => 21,  49 => 20,  44 => 18,  31 => 8,  22 => 1,);
     }
 }
-/* <!-- Colle ton code ici -->*/
+/* <!DOCTYPE html>*/
+/* <html ng-app="app">*/
+/*   <head>*/
+/*     <meta charset="utf-8">*/
+/*     <title>HOLIGO</title>*/
+/*     <!-- CSS -->*/
+/*     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">*/
+/*     <link rel="stylesheet" href="{{ asset ('css/style.css')}}">*/
+/*     <!-- icone -->*/
+/*     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">*/
+/*     <!-- Font -->*/
+/*     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>*/
+/*     <!-- JS -->*/
+/*     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>*/
+/*     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>*/
+/*     <!-- AUTOCOMPLETE API GOOGLE -->*/
+/*     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuG0OeQkBpLTk_ufVZVAQWxTicjPTP2Ok&libraries=places&components=country:fr"></script>*/
+/*     <script src="{{ asset ('js/libs/ngAutocomplete.js')}}"></script>*/
+/*     <!-- Angular JS -->*/
+/*     <script src="{{ asset ('js/libs/angular.min.js')}}"></script>*/
+/*     <script src="{{ asset ('js/libs/angular-route.min.js')}}"></script>*/
+/*     <script src="{{ asset ('js/libs/ngAutocomplete.js')}}"></script>*/
+/*     <!-- Controllers -->*/
+/*     <script src="{{ asset ('js/controllers/mainController.js')}}"></script>*/
+/*     <script src="{{ asset ('js/controllers/registerController.js')}}"></script>*/
+/*     <script src="{{ asset ('js/controllers/holidayController.js')}}"></script>*/
+/*     <!-- Services -->*/
+/*     <script src="{{ asset ('js/services/registerService.js')}}"></script>*/
+/*     <script src="{{ asset ('js/app.js')}}"></script>*/
+/*   </head>*/
+/*   <body>*/
+/*     <nav>*/
+/*       <div class="nav-wrapper">*/
+/*         <a href="#!" class="brand-logo">Holigo</a>*/
+/*         <ul class="right hide-on-med-and-down">*/
+/*           <li>*/
+/*             <!-- Modal Trigger -->*/
+/*             <a class="waves-effect waves-light modal-trigger btn" href="#modal1">Login</a>*/
+/*           </li>*/
+/*           <li>*/
+/*             <a class="waves-effect waves-light btn">Je m'inscris</a>*/
+/*           </li>*/
+/*         </ul>*/
+/*       </div>*/
+/*     </nav>*/
+/*     <div class="container-fluid">*/
+/*       <ng-view></ng-view>*/
+/*     </div>*/
+/*   </body>*/
+/* </html>*/
 /* */

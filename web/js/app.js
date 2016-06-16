@@ -1,15 +1,15 @@
 function config($routeProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'views/main.html',
+			templateUrl: '../views/main.html',
 			controller: 'mainController'
 		})
 		.when('/register', {
-			templateUrl: 'views/register.html',
+			templateUrl: '../views/register.html',
 			controller: 'registerController'
 		})
 		.when('/holiday', {
-			templateUrl: 'views/holiday.html',
+			templateUrl: '../views/holiday.html',
 			controller: 'holidayController'
 		})
 		.otherwise({
