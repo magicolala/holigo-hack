@@ -1,0 +1,4 @@
+[2016-06-16 09:38:07] request.INFO: Matched route "holigo_homepage". {"route_parameters":{"_controller":"holigoBundle\\Controller\\DefaultController::indexAction","_route":"holigo_homepage"},"request_uri":"http://localhost/holigo-hack/web/app_dev.php/"} []
+[2016-06-16 09:38:08] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2016-06-16 09:38:52] request.INFO: Matched route "holigo_homepage". {"route_parameters":{"_controller":"holigoBundle\\Controller\\DefaultController::indexAction","_route":"holigo_homepage"},"request_uri":"http://localhost/holigo-hack/web/app_dev.php/"} []
+[2016-06-16 09:38:52] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
