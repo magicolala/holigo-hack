@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dc1ab68a89773cf09c6d5c3349dcdd52",
-    "content-hash": "2687b239b5f6b7fba13ae3d66c184471",
+    "hash": "7242d60aa804a6136e4fceeff9d746e8",
+    "content-hash": "1d0319a4002ff4e9c08262dfe5a1684d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1023,6 +1023,46 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "qandidate/symfony-json-request-transformer",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qandidate-labs/symfony-json-request-transformer.git",
+                "reference": "f7c98f3784b5ffea13217d888b006e2e8c255ba7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/qandidate-labs/symfony-json-request-transformer/zipball/f7c98f3784b5ffea13217d888b006e2e8c255ba7",
+                "reference": "f7c98f3784b5ffea13217d888b006e2e8c255ba7",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/http-kernel": "~2.3|~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Qandidate\\Common\\Symfony\\HttpKernel\\EventListener": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander",
+                    "email": "iam.asm89@gmail.com"
+                },
+                {
+                    "name": "Qandidate.com",
+                    "homepage": "http://labs.qandidate.com/"
+                }
+            ],
+            "description": "A Symfony 2 event listener for decoding JSON encoded request content",
+            "time": "2016-05-03 19:25:11"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2177,8 +2217,5 @@
     "platform": {
         "php": ">=5.3.9"
     },
-    "platform-dev": [],
-    "platform-overrides": {
-        "php": "5.3.9"
-    }
+    "platform-dev": []
 }

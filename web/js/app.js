@@ -11,10 +11,10 @@ function config($routeProvider) {
 		.when('/holiday', {
 			templateUrl: '../views/holiday.html',
 			controller: 'holidayController'
-		})
-		.otherwise({
-			redirectTo: '/'
 		});
+		// .otherwise({
+		// 	redirectTo: '/'
+		// });
 }
 angular.module('app', ['ngRoute', 'ngAutocomplete'])
     .config(config)

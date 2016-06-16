@@ -2227,5 +2227,47 @@
         ],
         "description": "Symfony PHPUnit Bridge",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "qandidate/symfony-json-request-transformer",
+        "version": "1.2.1",
+        "version_normalized": "1.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/qandidate-labs/symfony-json-request-transformer.git",
+            "reference": "f7c98f3784b5ffea13217d888b006e2e8c255ba7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/qandidate-labs/symfony-json-request-transformer/zipball/f7c98f3784b5ffea13217d888b006e2e8c255ba7",
+            "reference": "f7c98f3784b5ffea13217d888b006e2e8c255ba7",
+            "shasum": ""
+        },
+        "require": {
+            "symfony/http-kernel": "~2.3|~3.0"
+        },
+        "time": "2016-05-03 19:25:11",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Qandidate\\Common\\Symfony\\HttpKernel\\EventListener": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alexander",
+                "email": "iam.asm89@gmail.com"
+            },
+            {
+                "name": "Qandidate.com",
+                "homepage": "http://labs.qandidate.com/"
+            }
+        ],
+        "description": "A Symfony 2 event listener for decoding JSON encoded request content"
     }
 ]
