@@ -1,0 +1,181 @@
+body {
+  margin:0;
+  padding:0;
+  background: url(../image/background.jpg) no-repeat center fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃƒÆ’Ã‚Â©e */
+}
+.sub_title{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 46px;
+  text-shadow: 0 0 9px #777;
+  color: #FFFFFF;
+}
+
+.title{
+  margin-left: 39%;
+  text-shadow: 0 0 9px #777;
+  color: #FFFFFF;
+  margin-top: 5%;
+}
+
+.modal {
+  width: 30% !important;
+}
+
+.connexion{
+  margin-left: 26%;
+}
+.button-dest {
+  color: #ee6e73;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.button-deco {
+  color: white;
+  font-size: 10px;
+}
+
+/*Register*/
+
+.block-reg {
+  background-color:rgba(26, 188, 156,0.4);
+
+  margin-top:30vh;
+}
+
+.block-reg label {
+  color: rgba(70, 120, 156,1);
+  font-weight: bolder;
+}
+
+.block-reg input {
+  color:black;
+}
+
+/*dashboard*/
+
+.titre {
+  height: 30px;
+  background-color: #ee6e73 ;
+  margin-bottom: 0;
+  margin-left: 6% !important;
+  color: white;
+  font-size: 20px;
+  text-align: center
+}
+
+.bloctitre {
+  height: 60px;
+  background-color: rgba(26, 188, 156, 1);
+  margin-top: -20px;
+  margin-left: 6% !important;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  border: solid 10px #ee6e73 ;
+  border-top: none;
+}
+
+.bloc {
+  height: 100px;
+  background-color: rgba(26, 188, 156, 1);
+  margin-right: 20px;
+}
+
+.bloc-center {
+  height: 50px;
+  border-left: solid 10px #ee6e73;
+  border-right: solid 10px #ee6e73;
+}
+
+.contbloc {
+  margin-left: 15%;
+  margin-top: 20px;
+}
+
+.logo-image {
+  margin-top: 20px;
+}
+
+.logo-image img {
+  margin-left: 20px;
+}
+
+.text {
+  margin-left: 10px;
+}
+
+.bloc a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.contblocbis {
+  margin-left: 2%;
+}
+
+.titlerecap {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+.simpleline {
+  margin-bottom: 0px;
+}
+
+.blocbis {
+  height: 200px;
+  background-color: rgba(26, 188, 156, 1);
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.depenses span {
+  margin-left: 45px;
+}
+
+.etat{
+  text-align: center;
+  font-size: 45px;
+  color: #fff;
+  margin-top: 30px;
+}
+
+/*--------------------------vue amis----------------*/
+.bloc-amis {
+
+  background-color: rgba(26, 188, 156, 1);
+  margin-top:5px;
+}
+
+.bloc-amis h4 {
+  color: white;
+}
+
+.amis-noms {
+  background-color: white;
+}
+
+.retour {
+  margin-top: 50px;
+  margin-left:20px;
+}
+
+.retour a {
+  font-size: 20px;
+
+}
+
+.retour {
+  margin-top: 15px;
+}
+
+.holliday{
+  margin-top: 5%;
+}
+
+/*transport*/
