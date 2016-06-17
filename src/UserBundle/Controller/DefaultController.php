@@ -35,7 +35,20 @@ class DefaultController extends FOSRestController
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('UserBundle:User')->find($id);
 
-        $retour = new \Symfony\Component\HttpFoundation\Response(json_encode($user));
+
+        // $prenom = $retour['prenom'];
+        // $nom = $retour['nom'];
+        // $mail = $retour['mail'];
+        // $password = $retour['password'];
+        // $passwordConfirmation = $retour['passwordConfirmation'];
+        $user->getPrenom($user['prenom']);
+        // $user->getNom('nom');
+        // $user->getMail('mail');
+        // $user->getPassword('password');
+        // $user->getPasswordConfirmation('passwordConfirmation');
+
+        $retour = json_decode($user, true);
+        var_dump($retour); exit;
 return $retour;
     }
     /**

@@ -60,7 +60,7 @@ class User
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -83,7 +83,7 @@ class User
     /**
      * Get prenom
      *
-     * @return string 
+     * @return string
      */
     public function getPrenom()
     {
@@ -106,7 +106,7 @@ class User
     /**
      * Get nom
      *
-     * @return string 
+     * @return string
      */
     public function getNom()
     {
@@ -129,7 +129,7 @@ class User
     /**
      * Get mail
      *
-     * @return string 
+     * @return string
      */
     public function getMail()
     {
@@ -152,7 +152,7 @@ class User
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -175,10 +175,14 @@ class User
     /**
      * Get passwordConfirmation
      *
-     * @return string 
+     * @return string
      */
     public function getPasswordConfirmation()
     {
         return $this->passwordConfirmation;
     }
+    // public function __construct( array $user = array() )
+    // {
+    //     return $this->ArrayCollection($user);
+    // }
 }

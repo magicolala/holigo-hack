@@ -161,12 +161,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         not_user_delete:
 
         // holigo_homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'holigo_homepage');
-            }
-
-            return array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'holigo_homepage',);
+        if (preg_match('#^/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'holigo_homepage')), array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::indexAction',));
         }
 
         // homepage
