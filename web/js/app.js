@@ -11,10 +11,26 @@ function config($routeProvider) {
 		.when('/holiday', {
 			templateUrl: '../views/holiday.html',
 			controller: 'holidayController'
+		})
+		.when('/amis', {
+			templateUrl: '../views/amis.html',
+			controller: 'holidayController'
+		})
+		.when('/dashboard', {
+			templateUrl: '../views/dashboard.html'
+		})
+		.when('/destination', {
+			templateUrl: '../views/destination.html'
+		})
+		.when('/dispo', {
+			templateUrl: '../views/dispo.html'
+		})
+		.when('/hebergement', {
+			templateUrl: '../views/hebergement.html'
+		})
+		.otherwise({
+			redirectTo: '/'
 		});
-		// .otherwise({
-		// 	redirectTo: '/'
-		// });
 }
 angular.module('app', ['ngRoute', 'ngAutocomplete'])
     .config(config)
