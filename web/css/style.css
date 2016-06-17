@@ -1,0 +1,48 @@
+body {
+  margin:0;
+  padding:0;
+  background: url(../image/background.jpg) no-repeat center fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃƒÆ’Ã‚Â©e */
+}
+.sub_title{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 46px;
+  text-shadow: 0 0 9px #777;
+  color: #FFFFFF;
+}
+
+.title{
+  margin-left: 39%;
+  text-shadow: 0 0 9px #777;
+  color: #FFFFFF;
+  margin-top: 5%;
+}
+
+.modal {
+  width: 30% !important;
+}
+
+.connexion{
+  margin-left: 26%;
+}
+/*Register*/
+
+.block-reg {
+  background-color:rgba(26, 188, 156,0.4);
+
+  margin-top:30vh;
+}
+
+.block-reg label {
+  color: rgba(70, 120, 156,1);
+  font-weight: bolder;
+}
+
+.block-reg input {
+  color:black;
+}
+
+.holiday_form{
+  background-color:#FFFFFF;
+}
