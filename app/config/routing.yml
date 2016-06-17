@@ -1,3 +1,7 @@
+sejour:
+    resource: "@SejourBundle/Resources/config/routing.yml"
+    prefix:   /
+
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
@@ -9,3 +13,8 @@ holigo:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+# api:
+#     resource: "@ApiBundle/Controller/V1/"
+#     type: annotation
+#     prefix: /api/v1

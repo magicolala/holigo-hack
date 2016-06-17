@@ -24,7 +24,9 @@ class DefaultController extends FOSRestController
     {
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('UserBundle:User')->findAll();
+        $response->headers->set('Content-Type', 'application/json');
         return array('users' => $users);
+
     }
     /**
      * Lists one User.
@@ -33,23 +35,26 @@ class DefaultController extends FOSRestController
     public function getUserAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository('UserBundle:User')->find($id);
+        $user = $em->getRepository('UserBundle:User')->findById($id);
 
 
-        // $prenom = $retour['prenom'];
+
+        // $user->getPrenom($prenom);
+        // $user->getNom($nom);
+        // $user->getMail($mail);
+        // $user->getPassword($password);
+        // $user->getPasswordConfirmation('passwordConfirmation');
+        $retour = json_encode($user, true);
+
+        // $prenom = $retour->request->get('prenom');
         // $nom = $retour['nom'];
         // $mail = $retour['mail'];
         // $password = $retour['password'];
         // $passwordConfirmation = $retour['passwordConfirmation'];
-        $user->getPrenom($user['prenom']);
-        // $user->getNom('nom');
-        // $user->getMail('mail');
-        // $user->getPassword('password');
-        // $user->getPasswordConfirmation('passwordConfirmation');
 
-        $retour = json_decode($user, true);
-        var_dump($retour); exit;
-return $retour;
+        // var_dump($retour);exit;
+
+return array('user' => $user);
     }
     /**
      * Creates a new User entity.

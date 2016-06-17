@@ -10,16 +10,16 @@ class DefaultController extends Controller
 {
 
 
-    public function indexAction($id)
+    public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository('UserBundle:User')->findById($id);
+        // $em = $this->getDoctrine()->getManager();
+        // $user = $em->getRepository('UserBundle:User')->findById($id);
+        //
+        // $retour = new \Symfony\Component\HttpFoundation\Response(json_encode($user));
+        // var_dump($retour); exit;
+        // return $retour;
 
-        $retour = json_decode($user, false);
-        var_dump($retour); exit;
-        return $retour;
-
-        // return $this->render('holigoBundle:Default:index.html.twig');
+        return $this->render('holigoBundle:Default:index.html.twig');
     }
 
 

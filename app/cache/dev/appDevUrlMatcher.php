@@ -105,6 +105,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // sejour_new
+        if (0 === strpos($pathinfo, '/sejour') && preg_match('#^/sejour\\.(?P<_format>[^/]++)$#s', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_sejour_new;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sejour_new')), array (  '_controller' => 'SejourBundle\\Controller\\DefaultController::createSejourAction',));
+        }
+        not_sejour_new:
+
         // get_users
         if (0 === strpos($pathinfo, '/users') && preg_match('#^/users\\.(?P<_format>[^/]++)$#s', $pathinfo, $matches)) {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
@@ -161,8 +172,12 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         not_user_delete:
 
         // holigo_homepage
-        if (preg_match('#^/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'holigo_homepage')), array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::indexAction',));
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'holigo_homepage');
+            }
+
+            return array (  '_controller' => 'holigoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'holigo_homepage',);
         }
 
         // homepage

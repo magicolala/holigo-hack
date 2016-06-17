@@ -20,6 +20,8 @@
       <parameter key="UserBundle">UserBundle\UserBundle</parameter>
       <parameter key="FOSRestBundle">FOS\RestBundle\FOSRestBundle</parameter>
       <parameter key="JMSSerializerBundle">JMS\SerializerBundle\JMSSerializerBundle</parameter>
+      <parameter key="SejourBundle">SejourBundle\SejourBundle</parameter>
+      <parameter key="ApiBundle">ApiBundle\ApiBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -510,7 +512,6 @@
     <parameter key="sensio_framework_extra.converter.manager.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterManager</parameter>
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
-    <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
     <parameter key="fos_rest.serializer.exclusion_strategy.version"></parameter>
     <parameter key="fos_rest.serializer.exclusion_strategy.groups"></parameter>
     <parameter key="fos_rest.view_handler.jsonp.callback_param"></parameter>
@@ -531,16 +532,18 @@
     <parameter key="fos_rest.request.param_fetcher.class">FOS\RestBundle\Request\ParamFetcher</parameter>
     <parameter key="fos_rest.request.param_fetcher.reader.class">FOS\RestBundle\Request\ParamReader</parameter>
     <parameter key="fos_rest.cache_dir">C:\wamp\www\holigo-hack\app\cache\dev/fos_rest</parameter>
-    <parameter key="fos_rest.routing.loader.default_format">null</parameter>
+    <parameter key="fos_rest.routing.loader.default_format">json</parameter>
     <parameter key="fos_rest.routing.loader.include_format">true</parameter>
     <parameter key="fos_rest.serializer.serialize_null">false</parameter>
     <parameter key="fos_rest.exception.codes" type="collection"/>
     <parameter key="fos_rest.exception.messages" type="collection"/>
     <parameter key="fos_rest.converter.request_body.validation_errors_argument">validationErrors</parameter>
     <parameter key="fos_rest.mime_types" type="collection"/>
+    <parameter key="fos_rest.view_response_listener.class">FOS\RestBundle\EventListener\ViewResponseListener</parameter>
+    <parameter key="fos_rest.view_response_listener.force_view">true</parameter>
     <parameter key="fos_rest.formats" type="collection">
-      <parameter key="json">false</parameter>
       <parameter key="xml">false</parameter>
+      <parameter key="json">false</parameter>
       <parameter key="html">true</parameter>
     </parameter>
     <parameter key="fos_rest.force_redirects" type="collection">
@@ -562,6 +565,8 @@
       <parameter key="json">fos_rest.decoder.json</parameter>
       <parameter key="xml">fos_rest.decoder.xml</parameter>
     </parameter>
+    <parameter key="fos_rest.param_fetcher_listener.class">FOS\RestBundle\EventListener\ParamFetcherListener</parameter>
+    <parameter key="fos_rest.param_fetcher_listener.set_params_as_attributes">false</parameter>
     <parameter key="jms_serializer.metadata.file_locator.class">Metadata\Driver\FileLocator</parameter>
     <parameter key="jms_serializer.metadata.annotation_driver.class">JMS\Serializer\Metadata\Driver\AnnotationDriver</parameter>
     <parameter key="jms_serializer.metadata.chain_driver.class">Metadata\Driver\DriverChain</parameter>
@@ -1762,12 +1767,36 @@
         <argument>0</argument>
       </call>
       <call method="addListenerService">
+        <argument>kernel.controller</argument>
+        <argument type="collection">
+          <argument>fos_rest.view_response_listener</argument>
+          <argument>onKernelController</argument>
+        </argument>
+        <argument>-10</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>kernel.view</argument>
+        <argument type="collection">
+          <argument>fos_rest.view_response_listener</argument>
+          <argument>onKernelView</argument>
+        </argument>
+        <argument>100</argument>
+      </call>
+      <call method="addListenerService">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument>fos_rest.body_listener</argument>
           <argument>onKernelRequest</argument>
         </argument>
         <argument>10</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>kernel.controller</argument>
+        <argument type="collection">
+          <argument>fos_rest.param_fetcher_listener</argument>
+          <argument>onKernelController</argument>
+        </argument>
+        <argument>5</argument>
       </call>
       <call method="addSubscriberService">
         <argument>response_listener</argument>
@@ -1842,10 +1871,6 @@
         <argument>Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener</argument>
       </call>
       <call method="addSubscriberService">
-        <argument>sensio_framework_extra.view.listener</argument>
-        <argument>Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</argument>
-      </call>
-      <call method="addSubscriberService">
         <argument>sensio_framework_extra.cache.listener</argument>
         <argument>Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener</argument>
       </call>
@@ -1889,7 +1914,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5763637700a881.43805890</argument>
+            <argument>5763c12612a1f7.36865890</argument>
           </service>
         </argument>
       </argument>
@@ -2018,7 +2043,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5763637700a881.43805890</argument>
+            <argument>5763c12612a1f7.36865890</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2525,10 +2550,6 @@
     <service id="sensio_framework_extra.converter.datetime" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter">
       <tag name="request.param_converter" converter="datetime"/>
     </service>
-    <service id="sensio_framework_extra.view.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener">
-      <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="service_container"/>
-    </service>
     <service id="sensio_framework_extra.cache.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener">
       <tag name="kernel.event_subscriber"/>
     </service>
@@ -2557,7 +2578,7 @@
       <argument type="service" id="file_locator"/>
       <argument type="service" id="controller_name_converter"/>
       <argument type="service" id="fos_rest.routing.loader.reader.controller"/>
-      <argument>null</argument>
+      <argument>json</argument>
     </service>
     <service id="fos_rest.routing.loader.processor" class="FOS\RestBundle\Routing\Loader\RestRouteProcessor"/>
     <service id="fos_rest.routing.loader.yaml_collection" class="FOS\RestBundle\Routing\Loader\RestYamlCollectionLoader">
@@ -2566,11 +2587,11 @@
       <argument type="service" id="fos_rest.routing.loader.processor"/>
       <argument>true</argument>
       <argument type="collection">
-        <argument key="json">false</argument>
         <argument key="xml">false</argument>
+        <argument key="json">false</argument>
         <argument key="html">true</argument>
       </argument>
-      <argument>null</argument>
+      <argument>json</argument>
     </service>
     <service id="fos_rest.routing.loader.xml_collection" class="FOS\RestBundle\Routing\Loader\RestXmlCollectionLoader">
       <tag name="routing.loader"/>
@@ -2578,11 +2599,11 @@
       <argument type="service" id="fos_rest.routing.loader.processor"/>
       <argument>true</argument>
       <argument type="collection">
-        <argument key="json">false</argument>
         <argument key="xml">false</argument>
+        <argument key="json">false</argument>
         <argument key="html">true</argument>
       </argument>
-      <argument>null</argument>
+      <argument>json</argument>
     </service>
     <service id="fos_rest.routing.loader.reader.controller" class="FOS\RestBundle\Routing\Loader\Reader\RestControllerReader">
       <argument type="service" id="fos_rest.routing.loader.reader.action"/>
@@ -2594,8 +2615,8 @@
       <argument type="service" id="fos_rest.inflector.doctrine"/>
       <argument>true</argument>
       <argument type="collection">
-        <argument key="json">false</argument>
         <argument key="xml">false</argument>
+        <argument key="json">false</argument>
         <argument key="html">true</argument>
       </argument>
     </service>
@@ -2611,6 +2632,11 @@
     </service>
     <service id="fos_rest.request.param_fetcher.reader" class="FOS\RestBundle\Request\ParamReader">
       <argument type="service" id="annotation_reader"/>
+    </service>
+    <service id="fos_rest.view_response_listener" class="FOS\RestBundle\EventListener\ViewResponseListener">
+      <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" priority="-10"/>
+      <tag name="kernel.event_listener" event="kernel.view" method="onKernelView" priority="100"/>
+      <argument type="service" id="service_container"/>
     </service>
     <service id="fos_rest.normalizer.camel_keys" class="FOS\RestBundle\Normalizer\CamelKeysNormalizer"/>
     <service id="fos_rest.normalizer.camel_keys_with_leading_underscore" class="FOS\RestBundle\Normalizer\CamelKeysNormalizerWithLeadingUnderscore"/>
@@ -2633,6 +2659,11 @@
       <call method="setDefaultFormat">
         <argument>null</argument>
       </call>
+    </service>
+    <service id="fos_rest.param_fetcher_listener" class="FOS\RestBundle\EventListener\ParamFetcherListener">
+      <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" priority="5"/>
+      <argument type="service" id="service_container"/>
+      <argument>false</argument>
     </service>
     <service id="jms_serializer.doctrine_proxy_subscriber" class="JMS\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber">
       <tag name="jms_serializer.event_subscriber"/>
@@ -3313,6 +3344,14 @@
         <argument>User</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp\www\holigo-hack\src\SejourBundle/Resources/views</argument>
+        <argument>Sejour</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\holigo-hack\src\ApiBundle/Resources/views</argument>
+        <argument>Api</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp\www\holigo-hack\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -3404,8 +3443,8 @@
     </service>
     <service id="fos_rest.view_handler" class="FOS\RestBundle\View\ViewHandler">
       <argument type="collection">
-        <argument key="json">false</argument>
         <argument key="xml">false</argument>
+        <argument key="json">false</argument>
         <argument key="html">true</argument>
       </argument>
       <argument>400</argument>
@@ -3449,6 +3488,8 @@
                       <argument key="UserBundle">C:\wamp\www\holigo-hack\src\UserBundle/Resources/config/serializer</argument>
                       <argument key="FOS\RestBundle">C:\wamp\www\holigo-hack\vendor\friendsofsymfony\rest-bundle\FOS\RestBundle/Resources/config/serializer</argument>
                       <argument key="JMS\SerializerBundle">C:\wamp\www\holigo-hack\vendor\jms\serializer-bundle\JMS\SerializerBundle/Resources/config/serializer</argument>
+                      <argument key="SejourBundle">C:\wamp\www\holigo-hack\src\SejourBundle/Resources/config/serializer</argument>
+                      <argument key="ApiBundle">C:\wamp\www\holigo-hack\src\ApiBundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\DebugBundle">C:\wamp\www\holigo-hack\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\WebProfilerBundle">C:\wamp\www\holigo-hack\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/config/serializer</argument>
                       <argument key="Sensio\Bundle\DistributionBundle">C:\wamp\www\holigo-hack\vendor\sensio\distribution-bundle/Resources/config/serializer</argument>
@@ -3475,6 +3516,8 @@
                       <argument key="UserBundle">C:\wamp\www\holigo-hack\src\UserBundle/Resources/config/serializer</argument>
                       <argument key="FOS\RestBundle">C:\wamp\www\holigo-hack\vendor\friendsofsymfony\rest-bundle\FOS\RestBundle/Resources/config/serializer</argument>
                       <argument key="JMS\SerializerBundle">C:\wamp\www\holigo-hack\vendor\jms\serializer-bundle\JMS\SerializerBundle/Resources/config/serializer</argument>
+                      <argument key="SejourBundle">C:\wamp\www\holigo-hack\src\SejourBundle/Resources/config/serializer</argument>
+                      <argument key="ApiBundle">C:\wamp\www\holigo-hack\src\ApiBundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\DebugBundle">C:\wamp\www\holigo-hack\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\WebProfilerBundle">C:\wamp\www\holigo-hack\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/config/serializer</argument>
                       <argument key="Sensio\Bundle\DistributionBundle">C:\wamp\www\holigo-hack\vendor\sensio\distribution-bundle/Resources/config/serializer</argument>
@@ -3501,6 +3544,8 @@
                       <argument key="UserBundle">C:\wamp\www\holigo-hack\src\UserBundle/Resources/config/serializer</argument>
                       <argument key="FOS\RestBundle">C:\wamp\www\holigo-hack\vendor\friendsofsymfony\rest-bundle\FOS\RestBundle/Resources/config/serializer</argument>
                       <argument key="JMS\SerializerBundle">C:\wamp\www\holigo-hack\vendor\jms\serializer-bundle\JMS\SerializerBundle/Resources/config/serializer</argument>
+                      <argument key="SejourBundle">C:\wamp\www\holigo-hack\src\SejourBundle/Resources/config/serializer</argument>
+                      <argument key="ApiBundle">C:\wamp\www\holigo-hack\src\ApiBundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\DebugBundle">C:\wamp\www\holigo-hack\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\WebProfilerBundle">C:\wamp\www\holigo-hack\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/config/serializer</argument>
                       <argument key="Sensio\Bundle\DistributionBundle">C:\wamp\www\holigo-hack\vendor\sensio\distribution-bundle/Resources/config/serializer</argument>

@@ -1,0 +1,4 @@
+sejour_new:
+    path:     /sejour.{_format}
+    defaults: { _controller: "SejourBundle:Default:createSejour" }
+    methods:  POST
