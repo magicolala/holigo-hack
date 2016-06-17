@@ -1,3 +1,0 @@
-holigo_homepage:
-    path:     /
-    defaults: { _controller: holigoBundle:Default:index }
