@@ -28,6 +28,9 @@ function config($routeProvider) {
 		.when('/hebergement', {
 			templateUrl: '../views/hebergement.html'
 		})
+		.when('/transport', {
+			templateUrl: '../views/transport.html'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
