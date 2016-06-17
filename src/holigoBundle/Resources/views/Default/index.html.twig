@@ -1,1 +1,39 @@
-<!-- Colle ton code ici -->
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>HOLIGO</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ asset ('css/style.css')}}">
+    <!-- icone -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <!-- JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <!-- AUTOCOMPLETE API GOOGLE -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuG0OeQkBpLTk_ufVZVAQWxTicjPTP2Ok&libraries=places&components=country:fr"></script>
+    <script src="{{ asset ('js/libs/ngAutocomplete.js')}}"></script>
+    <!-- Angular JS -->
+    <script src="{{ asset ('js/libs/angular.min.js')}}"></script>
+    <script src="{{ asset ('js/libs/angular-route.min.js')}}"></script>
+    <script src="{{ asset ('js/libs/ngAutocomplete.js')}}"></script>
+    <!-- Controllers -->
+    <script src="{{ asset ('js/controllers/mainController.js')}}"></script>
+    <script src="{{ asset ('js/controllers/registerController.js')}}"></script>
+    <script src="{{ asset ('js/controllers/holidayController.js')}}"></script>
+    <script src="{{ asset ('js/controllers/dashboardController.js')}}"></script>
+    <!-- Services -->
+    <script src="{{ asset ('js/services/registerService.js')}}"></script>
+    <script src="{{ asset ('js/services/holidayService.js')}}"></script>
+    <script src="{{ asset ('js/app.js')}}"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <ng-view></ng-view>
+    </div>
+  </body>
+</html>
