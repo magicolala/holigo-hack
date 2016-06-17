@@ -37,4 +37,5 @@ angular.module('app', ['ngRoute', 'ngAutocomplete'])
     .controller('mainController', mainController)
     .controller('registerController', registerController)
     .controller('holidayController', holidayController)
-		.service('registerService', registerService);
+	.service('registerService', registerService)
+	.service('holidayService', holidayService);

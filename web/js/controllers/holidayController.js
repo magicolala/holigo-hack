@@ -1,4 +1,4 @@
-function holidayController($scope, $http) {
+function holidayController($scope, $http, holidayService) {
 
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -9,11 +9,15 @@ function holidayController($scope, $http) {
     $('select').material_select();
   });
 
-  $scope.try = function() {
-    url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=Vancouver+BC|Seattle&destinations=San+Francisco|Victoria+BC&mode=bicycling&language=fr-FR&key=AIzaSyDuG0OeQkBpLTk_ufVZVAQWxTicjPTP2Ok";
-    $http.get(url).then(function(res) {
-      $scope.test = res;
-      console.log(res);
+  $scope.data = {};
+  $scope.sendHoliday =function (){
+    console.log($scope.data);
+    holidayService.create($scope.data).then(function(res, err){
+      if(err){
+        console.log(400);
+      }
+      console.log($scope.data);
+      console.log(200);
     });
   };
 }

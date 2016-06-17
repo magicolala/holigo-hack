@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>HOLIGO</title>
     <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel="stylesheet" href="{{ asset ('css/style.css')}}">
     <!-- icone -->
@@ -24,25 +25,13 @@
     <script src="{{ asset ('js/controllers/mainController.js')}}"></script>
     <script src="{{ asset ('js/controllers/registerController.js')}}"></script>
     <script src="{{ asset ('js/controllers/holidayController.js')}}"></script>
+    <script src="{{ asset ('js/controllers/dashboardController.js')}}"></script>
     <!-- Services -->
     <script src="{{ asset ('js/services/registerService.js')}}"></script>
+    <script src="{{ asset ('js/services/holidayService.js')}}"></script>
     <script src="{{ asset ('js/app.js')}}"></script>
   </head>
   <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Holigo</a>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <!-- Modal Trigger -->
-            <a class="waves-effect waves-light modal-trigger btn" href="#modal1">Se connecter</a>
-          </li>
-          <li>
-            <a class="waves-effect waves-light btn" href="/holigo-hack/web/app_dev.php/#/register">Inscription</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
     <div class="container-fluid">
       <ng-view></ng-view>
     </div>
