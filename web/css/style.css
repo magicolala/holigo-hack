@@ -26,6 +26,17 @@ body {
 .connexion{
   margin-left: 26%;
 }
+.button-dest {
+  color: #ee6e73;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.button-deco {
+  color: white;
+  font-size: 10px;
+}
+
 /*Register*/
 
 .block-reg {
@@ -43,6 +54,128 @@ body {
   color:black;
 }
 
-.holiday_form{
-  background-color:#FFFFFF;
+/*dashboard*/
+
+.titre {
+  height: 30px;
+  background-color: #ee6e73 ;
+  margin-bottom: 0;
+  margin-left: 6% !important;
+  color: white;
+  font-size: 20px;
+  text-align: center
 }
+
+.bloctitre {
+  height: 60px;
+  background-color: rgba(26, 188, 156, 1);
+  margin-top: -20px;
+  margin-left: 6% !important;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  border: solid 10px #ee6e73 ;
+  border-top: none;
+}
+
+.bloc {
+  height: 100px;
+  background-color: rgba(26, 188, 156, 1);
+  margin-right: 20px;
+}
+
+.bloc-center {
+  height: 50px;
+  border-left: solid 10px #ee6e73;
+  border-right: solid 10px #ee6e73;
+}
+
+.contbloc {
+  margin-left: 15%;
+  margin-top: 20px;
+}
+
+.logo-image {
+  margin-top: 20px;
+}
+
+.logo-image img {
+  margin-left: 20px;
+}
+
+.text {
+  margin-left: 10px;
+}
+
+.bloc a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.contblocbis {
+  margin-left: 2%;
+}
+
+.titlerecap {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+.simpleline {
+  margin-bottom: 0px;
+}
+
+.blocbis {
+  height: 200px;
+  background-color: rgba(26, 188, 156, 1);
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.depenses span {
+  margin-left: 45px;
+}
+
+.etat{
+  text-align: center;
+  font-size: 45px;
+  color: #fff;
+  margin-top: 30px;
+}
+
+/*--------------------------vue amis----------------*/
+.bloc-amis {
+
+  background-color: rgba(26, 188, 156, 1);
+  margin-top:5px;
+}
+
+.bloc-amis h4 {
+  color: white;
+}
+
+.amis-noms {
+  background-color: white;
+}
+
+.retour {
+  margin-top: 50px;
+  margin-left:20px;
+}
+
+.retour a {
+  font-size: 20px;
+
+}
+
+.retour {
+  margin-top: 15px;
+}
+
+.holliday{
+  margin-top: 5%;
+}
+
+/*transport*/

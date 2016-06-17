@@ -1,9 +1,8 @@
-function registerController($scope, registerService){
+function registerController($scope, $location, registerService){
 
   $scope.data = {};
 
   $scope.register =function (){
-    console.log($scope.data);
     registerService.create($scope.data).then(function(res, err){
       if(err){
         console.log(400);
@@ -11,6 +10,4 @@ function registerController($scope, registerService){
       console.log(200);
     });
   };
-
-
 }

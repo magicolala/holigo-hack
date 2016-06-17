@@ -17,7 +17,8 @@ function config($routeProvider) {
 			controller: 'holidayController'
 		})
 		.when('/dashboard', {
-			templateUrl: '../views/dashboard.html'
+			templateUrl: '../views/dashboard.html',
+			controller: 'dashboardController'
 		})
 		.when('/destination', {
 			templateUrl: '../views/destination.html'
@@ -28,6 +29,9 @@ function config($routeProvider) {
 		.when('/hebergement', {
 			templateUrl: '../views/hebergement.html'
 		})
+		.when('/transport', {
+			templateUrl: '../views/transport.html'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
@@ -37,4 +41,5 @@ angular.module('app', ['ngRoute', 'ngAutocomplete'])
     .controller('mainController', mainController)
     .controller('registerController', registerController)
     .controller('holidayController', holidayController)
+    .controller('dashboardController', dashboardController)
 		.service('registerService', registerService);
