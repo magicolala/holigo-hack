@@ -15,8 +15,8 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ce003428c5111277e582e0296fa1ba9bda365a1ba30c2aed3f1d5de1b78567a7 = $this->env->getExtension("native_profiler");
-        $__internal_ce003428c5111277e582e0296fa1ba9bda365a1ba30c2aed3f1d5de1b78567a7->enter($__internal_ce003428c5111277e582e0296fa1ba9bda365a1ba30c2aed3f1d5de1b78567a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "holigoBundle:Default:index.html.twig"));
+        $__internal_6c961747dc1f6bb11c67b27d479bf6a9a6eaf2f16450f98bc5ef086896e27804 = $this->env->getExtension("native_profiler");
+        $__internal_6c961747dc1f6bb11c67b27d479bf6a9a6eaf2f16450f98bc5ef086896e27804->enter($__internal_6c961747dc1f6bb11c67b27d479bf6a9a6eaf2f16450f98bc5ef086896e27804_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "holigoBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -25,9 +25,10 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
     <meta charset=\"utf-8\">
     <title>HOLIGO</title>
     <!-- CSS -->
+    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css\">
     <link rel=\"stylesheet\" href=\"";
-        // line 8
+        // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/style.css"), "html", null, true);
         echo "\">
     <!-- icone -->
@@ -40,60 +41,54 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
     <!-- AUTOCOMPLETE API GOOGLE -->
     <script type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDuG0OeQkBpLTk_ufVZVAQWxTicjPTP2Ok&libraries=places&components=country:fr\"></script>
     <script src=\"";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/libs/ngAutocomplete.js"), "html", null, true);
         echo "\"></script>
     <!-- Angular JS -->
     <script src=\"";
-        // line 20
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/libs/angular.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 21
+        // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/libs/angular-route.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 22
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/libs/ngAutocomplete.js"), "html", null, true);
         echo "\"></script>
     <!-- Controllers -->
     <script src=\"";
-        // line 24
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/controllers/mainController.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 25
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/controllers/registerController.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 26
+        // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/controllers/holidayController.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/controllers/dashboardController.js"), "html", null, true);
         echo "\"></script>
     <!-- Services -->
     <script src=\"";
-        // line 28
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/services/registerService.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 29
+        // line 31
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/services/holidayService.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 32
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
   </head>
   <body>
-    <nav>
-      <div class=\"nav-wrapper\">
-        <a href=\"#!\" class=\"brand-logo\">Holigo</a>
-        <ul class=\"right hide-on-med-and-down\">
-          <li>
-            <!-- Modal Trigger -->
-            <a class=\"waves-effect waves-light modal-trigger btn\" href=\"#modal1\">Se connecter</a>
-          </li>
-          <li>
-            <a class=\"waves-effect waves-light btn\" href=\"/holigo-hack/web/app_dev.php/#/register\">Inscription</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
     <div class=\"container-fluid\">
       <ng-view></ng-view>
     </div>
@@ -101,7 +96,7 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
 </html>
 ";
         
-        $__internal_ce003428c5111277e582e0296fa1ba9bda365a1ba30c2aed3f1d5de1b78567a7->leave($__internal_ce003428c5111277e582e0296fa1ba9bda365a1ba30c2aed3f1d5de1b78567a7_prof);
+        $__internal_6c961747dc1f6bb11c67b27d479bf6a9a6eaf2f16450f98bc5ef086896e27804->leave($__internal_6c961747dc1f6bb11c67b27d479bf6a9a6eaf2f16450f98bc5ef086896e27804_prof);
 
     }
 
@@ -117,7 +112,7 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
 
     public function getDebugInfo()
     {
-        return array (  79 => 29,  75 => 28,  70 => 26,  66 => 25,  62 => 24,  57 => 22,  53 => 21,  49 => 20,  44 => 18,  31 => 8,  22 => 1,);
+        return array (  88 => 32,  84 => 31,  80 => 30,  75 => 28,  71 => 27,  67 => 26,  63 => 25,  58 => 23,  54 => 22,  50 => 21,  45 => 19,  32 => 9,  22 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -126,6 +121,7 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
 /*     <meta charset="utf-8">*/
 /*     <title>HOLIGO</title>*/
 /*     <!-- CSS -->*/
+/*     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">*/
 /*     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">*/
 /*     <link rel="stylesheet" href="{{ asset ('css/style.css')}}">*/
 /*     <!-- icone -->*/
@@ -146,25 +142,13 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
 /*     <script src="{{ asset ('js/controllers/mainController.js')}}"></script>*/
 /*     <script src="{{ asset ('js/controllers/registerController.js')}}"></script>*/
 /*     <script src="{{ asset ('js/controllers/holidayController.js')}}"></script>*/
+/*     <script src="{{ asset ('js/controllers/dashboardController.js')}}"></script>*/
 /*     <!-- Services -->*/
 /*     <script src="{{ asset ('js/services/registerService.js')}}"></script>*/
+/*     <script src="{{ asset ('js/services/holidayService.js')}}"></script>*/
 /*     <script src="{{ asset ('js/app.js')}}"></script>*/
 /*   </head>*/
 /*   <body>*/
-/*     <nav>*/
-/*       <div class="nav-wrapper">*/
-/*         <a href="#!" class="brand-logo">Holigo</a>*/
-/*         <ul class="right hide-on-med-and-down">*/
-/*           <li>*/
-/*             <!-- Modal Trigger -->*/
-/*             <a class="waves-effect waves-light modal-trigger btn" href="#modal1">Se connecter</a>*/
-/*           </li>*/
-/*           <li>*/
-/*             <a class="waves-effect waves-light btn" href="/holigo-hack/web/app_dev.php/#/register">Inscription</a>*/
-/*           </li>*/
-/*         </ul>*/
-/*       </div>*/
-/*     </nav>*/
 /*     <div class="container-fluid">*/
 /*       <ng-view></ng-view>*/
 /*     </div>*/

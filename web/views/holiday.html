@@ -30,37 +30,37 @@
   </div>
   <div class="row">
     <div class="input-field col l3">
-      <select>
-        <option value="0" ng-model="data.transport">Voiture</option>
+      <select ng-model="data.transport">
+        <option value="0">Voiture</option>
       </select>
       <label>Moyen de transport</label>
     </div>
     <div class="input-field col l3">
-      <select>
-        <option value="0" ng-model="data.carburant">Essence</option>
-        <option value="1" ng-model="data.carburant">Gazoile</option>
+      <select ng-model="data.carburant">
+        <option value="0" >Essence</option>
+        <option value="1">Gazoile</option>
       </select>
       <label>Carburant</label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col l3">
-      <input id="email" type="number" value="80" class="validate">
-      <label class="active" for="email" ng-model="data.hebergement">Budget hébergement / jour /pers</label>
+      <input id="email" type="number" value="80" class="validate" ng-model="data.hebergement">
+      <label class="active" for="email">Budget hébergement / jour /pers</label>
     </div>
     <div class="input-field col l3">
-      <input id="email" type="number" value="22" class="validate">
-      <label class="active" for="email"  ng-model="data.nouriture" >Budget nouriture / jour /pers</label>
+      <input id="email" type="number" value="22" class="validate" ng-model="data.nouriture">
+      <label class="active" for="email" >Budget nouriture / jour /pers</label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col l3">
-      <input id="email" type="number" value="30" class="validate">
-      <label class="active" for="email"  ng-model="data.sortie">Budget sortie / jour /pers</label>
+      <input id="email" type="number" value="30" class="validate" ng-model="data.sortie">
+      <label class="active" for="email">Budget sortie / jour /pers</label>
     </div>
     <div class="input-field col l3">
-      <input id="email" type="number" class="validate">
-      <label class="active" for="email"  ng-model="data.nbrPersonne">Nombre de personne</label>
+      <input id="email" type="text" class="validate" ng-model="data.nbrPersonne">
+      <label class="active" for="email">Nombre de personne</label>
     </div>
   </div>
   <button type="button" class="btn btn-default sucess" ng-click="sendHoliday()">Valider</button>
