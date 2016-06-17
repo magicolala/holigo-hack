@@ -34,7 +34,9 @@ class DefaultController extends FOSRestController
     {
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('UserBundle:User')->find($id);
-        return array('user' => $user);
+
+        $retour = new \Symfony\Component\HttpFoundation\Response(json_encode($user));
+return $retour;
     }
     /**
      * Creates a new User entity.
