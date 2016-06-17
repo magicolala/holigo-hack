@@ -1,0 +1,24 @@
+get_users:
+    path:     /users.{_format}
+    defaults: { _controller: "UserBundle:Default:getUsers" }
+    methods:  GET
+
+get_user:
+    path:     /{id}.{_format}
+    defaults: { _controller: "UserBundle:Default:getUser" }
+    methods:  GET
+
+user_new:
+    path:     /new.{_format}
+    defaults: { _controller: "UserBundle:Default:createUser" }
+    methods:  POST
+
+user_edit:
+    path:     /edit/{id}.{_format}
+    defaults: { _controller: "UserBundle:Default:editUser" }
+    methods:  PUT
+
+user_delete:
+    path:     /delete/{id}.{_format}
+    defaults: { _controller: "UserBundle:Default:deleteUser" }
+    methods:  DELETE
