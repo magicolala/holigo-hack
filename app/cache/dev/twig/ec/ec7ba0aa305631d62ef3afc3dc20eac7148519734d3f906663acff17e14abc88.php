@@ -15,8 +15,8 @@ class __TwigTemplate_397d385a6ff14a034bf7f302ee3acb583019bc2c66b305ba6b7b2491801
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b1494f9b9e0497dacf2a260ff5d97749979974d2426574fdde2186c142689770 = $this->env->getExtension("native_profiler");
-        $__internal_b1494f9b9e0497dacf2a260ff5d97749979974d2426574fdde2186c142689770->enter($__internal_b1494f9b9e0497dacf2a260ff5d97749979974d2426574fdde2186c142689770_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "holigoBundle:Default:index.html.twig"));
+        $__internal_5a356f044406aaaec91a5f7a3c66d4d3e0b770d0c85b88f8d74f687e2c47a912 = $this->env->getExtension("native_profiler");
+        $__internal_5a356f044406aaaec91a5f7a3c66d4d3e0b770d0c85b88f8d74f687e2c47a912->enter($__internal_5a356f044406aaaec91a5f7a3c66d4d3e0b770d0c85b88f8d74f687e2c47a912_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "holigoBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -101,7 +101,7 @@ class __TwigTemplate_397d385a6ff14a034bf7f302ee3acb583019bc2c66b305ba6b7b2491801
 </html>
 ";
         
-        $__internal_b1494f9b9e0497dacf2a260ff5d97749979974d2426574fdde2186c142689770->leave($__internal_b1494f9b9e0497dacf2a260ff5d97749979974d2426574fdde2186c142689770_prof);
+        $__internal_5a356f044406aaaec91a5f7a3c66d4d3e0b770d0c85b88f8d74f687e2c47a912->leave($__internal_5a356f044406aaaec91a5f7a3c66d4d3e0b770d0c85b88f8d74f687e2c47a912_prof);
 
     }
 
