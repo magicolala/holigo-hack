@@ -13,8 +13,7 @@ function config($routeProvider) {
 			controller: 'holidayController'
 		})
 		.when('/amis', {
-			templateUrl: '../views/amis.html',
-			controller: 'holidayController'
+			templateUrl: '../views/amis.html'
 		})
 		.when('/dashboard', {
 			templateUrl: '../views/dashboard.html',
@@ -42,4 +41,5 @@ angular.module('app', ['ngRoute', 'ngAutocomplete'])
     .controller('registerController', registerController)
     .controller('holidayController', holidayController)
     .controller('dashboardController', dashboardController)
-		.service('registerService', registerService);
+		.service('registerService', registerService)
+		.service('holidayService', holidayService);

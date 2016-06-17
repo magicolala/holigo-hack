@@ -15,8 +15,8 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7c5adac57fc1f3a6c633c0a207e1aa3b70d65371b9e436de81c4a65cd93b29d8 = $this->env->getExtension("native_profiler");
-        $__internal_7c5adac57fc1f3a6c633c0a207e1aa3b70d65371b9e436de81c4a65cd93b29d8->enter($__internal_7c5adac57fc1f3a6c633c0a207e1aa3b70d65371b9e436de81c4a65cd93b29d8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "holigoBundle:Default:index.html.twig"));
+        $__internal_b4492707a772b844373c2217928cc8966b71bb5036a064b5cbf429cd2860cc00 = $this->env->getExtension("native_profiler");
+        $__internal_b4492707a772b844373c2217928cc8966b71bb5036a064b5cbf429cd2860cc00->enter($__internal_b4492707a772b844373c2217928cc8966b71bb5036a064b5cbf429cd2860cc00_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "holigoBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -81,6 +81,10 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
         echo "\"></script>
     <script src=\"";
         // line 31
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/services/holidayService.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 32
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
   </head>
@@ -92,7 +96,7 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
 </html>
 ";
         
-        $__internal_7c5adac57fc1f3a6c633c0a207e1aa3b70d65371b9e436de81c4a65cd93b29d8->leave($__internal_7c5adac57fc1f3a6c633c0a207e1aa3b70d65371b9e436de81c4a65cd93b29d8_prof);
+        $__internal_b4492707a772b844373c2217928cc8966b71bb5036a064b5cbf429cd2860cc00->leave($__internal_b4492707a772b844373c2217928cc8966b71bb5036a064b5cbf429cd2860cc00_prof);
 
     }
 
@@ -108,7 +112,7 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
 
     public function getDebugInfo()
     {
-        return array (  84 => 31,  80 => 30,  75 => 28,  71 => 27,  67 => 26,  63 => 25,  58 => 23,  54 => 22,  50 => 21,  45 => 19,  32 => 9,  22 => 1,);
+        return array (  88 => 32,  84 => 31,  80 => 30,  75 => 28,  71 => 27,  67 => 26,  63 => 25,  58 => 23,  54 => 22,  50 => 21,  45 => 19,  32 => 9,  22 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -141,6 +145,7 @@ class __TwigTemplate_5f96b11bb5a5788b7606fd76f3d600ebe4309ef36d09beda484beb6c876
 /*     <script src="{{ asset ('js/controllers/dashboardController.js')}}"></script>*/
 /*     <!-- Services -->*/
 /*     <script src="{{ asset ('js/services/registerService.js')}}"></script>*/
+/*     <script src="{{ asset ('js/services/holidayService.js')}}"></script>*/
 /*     <script src="{{ asset ('js/app.js')}}"></script>*/
 /*   </head>*/
 /*   <body>*/
